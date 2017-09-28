@@ -23,6 +23,6 @@ $ ./restore.sh
 ## Todo
 
 - [ ] Start restore from Arq
-- [ ] Restore dock
-- [ ] Restore application settings
+- [X] Restore dock
+- [X] Restore application settings
 - [ ] Restore wallpaper / screensaver

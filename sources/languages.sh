@@ -7,10 +7,6 @@ source /usr/local/opt/asdf/asdf.sh
 pnotice "Installing GoLang"
 asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 
-pnotice "Installing Node.js"
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-bash /usr/local/opt/asdf/plugins/nodejs/bin/import-release-team-keyring
-
 pnotice "Installing Ruby"
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
@@ -22,6 +18,12 @@ pushd ~/
 asdf install
 popd
 
+pinfo "Installing Node.js"
+brew install nvm
+
+nvm install 6
+nvm alias default 6
+
 pnotice "Installing Global Packages"
-npm install -g jenkins-mocha mocha tldr
+npm install -g jenkins-mocha mocha
 gem install bundler

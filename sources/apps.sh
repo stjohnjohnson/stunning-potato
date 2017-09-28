@@ -2,6 +2,31 @@
 
 pinfo "Installing Required Packages"
 brew bundle --file=- <<EOF
+    tap "homebrew/bundle"
+    tap "homebrew/core"
+    tap "caskroom/versions" # Alternate versions of software
+    tap "caskroom/fonts"    # Powerline fonts
+
+    # Backup
+    cask 'arq'            # Backup program
+    cask 'dropbox'        # Local configuration storage
+    cask 'mackup'         # App configuration service
+
+    # Shell Stuff
+    brew 'lastpass-cli'   # Accessing secrets
+    brew 'zsh'            # Not bash
+    brew 'zsh-syntax-highlighting'
+    brew 'coreutils'      # All those cool GNU things
+    brew 'gpg'            # Encryption and Signing
+    brew 'git'            # Collaborating
+    brew 'tree'           #
+    brew 'rename'         #
+    brew 'watch'          #
+    brew 'curl'           #
+    brew 'wget'           #
+    brew 'tldr'           # Quick lookup of stuff
+    brew 'plantuml'       #
+
     # Communication
     cask 'slack'          # To chat with most people
     cask 'whatsapp'       # To see everyone's group chats
@@ -10,7 +35,7 @@ brew bundle --file=- <<EOF
 
     # Editors
     cask 'atom'           # Coding and stuff
-    cask 'sublime-text'   # Editing big files
+    cask 'sublime-text3'  # Editing big files
     cask 'xmind'          # Mindmapping
     cask 'macdown'        # Markdown editor
     brew 'vim'            # When you really need it
@@ -33,7 +58,11 @@ brew bundle --file=- <<EOF
     cask 'google-chrome'  # Browsing the web
     cask 'keybase'        # Sharing secrets
     brew 'screen'         # Just in case
-    # cask 'copay'          # Paying people
+    cask 'unison'         # Sharing files
+    cask 'jdownloader'    # To make downloading easier
+    cask 'the-unarchiver' # To decompress things
+    cask 'appcleaner'     # Help removing stuff
+    # cask 'copay'        # Paying people
 
     # Taskbar stuff
     cask 'bitbar'         # Display pretty things in my taskbar
@@ -47,6 +76,10 @@ brew bundle --file=- <<EOF
     cask 'battle-net'     # Lots of games
     brew 'nethack'        # For when you're feeling nostalgic
 EOF
+
+brew cleanup
+brew cask cleanup
+brew prune
 
 pinfo "Installing Oh-My-ZSH"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
