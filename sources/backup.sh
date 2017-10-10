@@ -15,6 +15,7 @@ prompt
 
 # @TODO Arq restore
 
-pinfo "Restoring configuration"
+pinfo "Restoring Mackup Configuration"
 ln -s ~/Dropbox/Settings/Mackup/.mackup.cfg ~/.mackup.cfg
+ln -s ~/Dropbox/Settings/Mackup/.mackup ~/.mackup
 mackup restore

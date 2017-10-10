@@ -42,8 +42,8 @@ pinfo "Creating local folders"
 mkdir -p ~/.bin ~/Sites
 
 source ./sources/homebrew.sh
-source ./sources/backup.sh
 source ./sources/apps.sh
+source ./sources/backup.sh
 source ./sources/languages.sh
 source ./sources/settings.sh
 

@@ -10,7 +10,7 @@ brew bundle --file=- <<EOF
     # Backup
     cask 'arq'            # Backup program
     cask 'dropbox'        # Local configuration storage
-    cask 'mackup'         # App configuration service
+    brew 'mackup'         # App configuration service
 
     # Shell Stuff
     brew 'lastpass-cli'   # Accessing secrets
@@ -75,6 +75,17 @@ brew bundle --file=- <<EOF
     cask 'steam'          # So I can play games
     cask 'battle-net'     # Lots of games
     brew 'nethack'        # For when you're feeling nostalgic
+
+    # Fonts
+    cask 'font-droid-sans-mono-for-powerline'
+    cask 'font-consolas-for-powerline'
+    cask 'font-menlo-for-powerline'
+    cask 'font-meslo-for-powerline'
+    cask 'font-source-code-pro-for-powerline'
+
+    # Apple specific stuff
+    brew 'mas'
+    mas 'InstaCal', id: 1247292524
 EOF
 
 brew cleanup
