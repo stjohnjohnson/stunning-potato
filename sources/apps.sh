@@ -50,6 +50,7 @@ brew bundle --file=- <<EOF
     brew 'hub'            # Collaborating with a fancy UI
     brew 'kubernetes-cli' # Controlling deployed services
     brew 'awscli'         # Working with Amazon
+    cask 'insomnia'       # RESTful calls
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
@@ -63,6 +64,9 @@ brew bundle --file=- <<EOF
     cask 'the-unarchiver' # To decompress things
     cask 'appcleaner'     # Help removing stuff
     # cask 'copay'        # Paying people
+
+    # Security
+    cask 'little-snitch'  # Control network input/output
 
     # Taskbar stuff
     cask 'bitbar'         # Display pretty things in my taskbar
@@ -95,3 +99,6 @@ brew prune
 pinfo "Installing Oh-My-ZSH"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 chsh -s /bin/zsh
+
+pinfo "Installing Interactive Items"
+open /usr/local/Caskroom/battle-net/latest/Battle.net-Setup.app
