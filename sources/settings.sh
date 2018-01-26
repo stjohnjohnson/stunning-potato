@@ -11,10 +11,10 @@ pinfo "General UI/UX"
 ###############################################################################
 
 pnotice "Set computer name (as done via System Preferences → Sharing)"
-sudo scutil --set ComputerName "heart-of-gold"
-sudo scutil --set HostName "heart-of-gold"
-sudo scutil --set LocalHostName "heart-of-gold"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "heart-of-gold"
+sudo scutil --set ComputerName "infinite-improbability"
+sudo scutil --set HostName "infinite-improbability"
+sudo scutil --set LocalHostName "infinite-improbability"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "infinite-improbability"
 
 pnotice "Set standby delay to 24 hours (default is 1 hour)"
 sudo pmset -a standbydelay 86400
@@ -25,8 +25,8 @@ sudo nvram SystemAudioVolume=" "
 pnotice "Disable transparency in the menu bar and elsewhere on Yosemite"
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
-pnotice "Set highlight color to green"
-defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
+# pnotice "Set highlight color to green"
+# defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 pnotice "Set sidebar icon size to medium"
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
@@ -117,13 +117,6 @@ pinfo "SSD-specific tweaks"
 pnotice "Disable hibernation (speeds up entering sleep mode)"
 sudo pmset -a hibernatemode 0
 
-pnotice "Remove the sleep image file to save disk space"
-sudo rm /private/var/vm/sleepimage
-pnotice "Create a zero-byte file instead…"
-sudo touch /private/var/vm/sleepimage
-pnotice "...and make sure it can’t be rewritten"
-sudo chflags uchg /private/var/vm/sleepimage
-
 ###############################################################################
 pinfo "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
 ###############################################################################
@@ -176,10 +169,6 @@ sudo systemsetup -settimezone "America/Los_Angeles" > /dev/null
 ###############################################################################
 pinfo "Screen"
 ###############################################################################
-
-pnotice "Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 pnotice "Save screenshots to the Dropbox"
 defaults write com.apple.screencapture location -string "${HOME}/Dropbox/Photos/Screenshots"
@@ -447,8 +436,6 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
-pnotice "Make sure indexing is disabled for the main volume"
-sudo mdutil -i off / > /dev/null
 
 ###############################################################################
 pinfo "Terminal & iTerm 2"
@@ -476,9 +463,6 @@ pinfo "Time Machine"
 
 pnotice "Prevent Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-pnotice "Disable local Time Machine backups"
-hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 pinfo "Activity Monitor"
@@ -593,17 +577,3 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 pnotice "Expand the print dialog by default"
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-# ###############################################################################
-# # Sublime Text                                                                #
-# ###############################################################################
-#
-# # Install Sublime Text settings
-# cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
-#
-# ###############################################################################
-# # Spectacle.app                                                               #
-# ###############################################################################
-#
-# # Set up my preferred keyboard shortcuts
-# cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null

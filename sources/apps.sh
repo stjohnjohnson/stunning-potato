@@ -17,25 +17,26 @@ brew bundle --file=- <<EOF
     brew 'zsh'            # Not bash
     brew 'zsh-syntax-highlighting'
     brew 'coreutils'      # All those cool GNU things
-    brew 'gpg'            # Encryption and Signing
+    brew 'gnupg'          # Encryption and Signing
     brew 'git'            # Collaborating
     brew 'tree'           #
-    brew 'rename'         #
-    brew 'watch'          #
-    brew 'curl'           #
-    brew 'wget'           #
+    brew 'rename'         # Sometimes you just gotta change a whole bunch of files
+    brew 'watch'          # Who watches the watchmen
+    brew 'curl'           # To access things off the "World Wide Web"
+    brew 'nmap'           # Are you there?
+    brew 'wget'           # When cURL just won't do
     brew 'tldr'           # Quick lookup of stuff
-    brew 'plantuml'       #
 
     # Communication
     cask 'slack'          # To chat with most people
     cask 'whatsapp'       # To see everyone's group chats
+    cask 'signal'         # More secure chats
     cask 'telegram'       # To automate all the things
     cask 'discord'        # To chat while gaming
 
     # Editors
     cask 'atom'           # Coding and stuff
-    cask 'sublime-text3'  # Editing big files
+    cask 'sublime-text'   # Editing big files
     cask 'xmind'          # Mindmapping
     cask 'macdown'        # Markdown editor
     brew 'vim'            # When you really need it
@@ -51,6 +52,7 @@ brew bundle --file=- <<EOF
     brew 'kubernetes-cli' # Controlling deployed services
     brew 'awscli'         # Working with Amazon
     cask 'insomnia'       # RESTful calls
+    brew 'pandoc'         # Converting formats
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
@@ -63,14 +65,15 @@ brew bundle --file=- <<EOF
     cask 'jdownloader'    # To make downloading easier
     cask 'the-unarchiver' # To decompress things
     cask 'appcleaner'     # Help removing stuff
-    # cask 'copay'        # Paying people
+
+    # Crypto
+    cask 'daedalus'       # Cardano wallet
 
     # Security
     cask 'little-snitch'  # Control network input/output
 
     # Taskbar stuff
     cask 'bitbar'         # Display pretty things in my taskbar
-    cask 'nosleep'        # Keep machine from turning off
     cask 'caffeine'       # Keep screen from going to sleep
     cask 'spectacle'      # Move windows around
     cask 'flux'           # Sleep better
@@ -90,15 +93,12 @@ brew bundle --file=- <<EOF
     # Apple specific stuff
     brew 'mas'
     mas 'InstaCal', id: 1247292524
+    mas 'CleanMyDrive 2', id: 523620159
 EOF
 
 brew cleanup
 brew cask cleanup
 brew prune
-
-pinfo "Installing Oh-My-ZSH"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-chsh -s /bin/zsh
 
 pinfo "Installing Interactive Items"
 open /usr/local/Caskroom/battle-net/latest/Battle.net-Setup.app
