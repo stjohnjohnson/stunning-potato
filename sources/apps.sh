@@ -53,6 +53,7 @@ brew bundle --file=- <<EOF
     brew 'awscli'         # Working with Amazon
     cask 'insomnia'       # RESTful calls
     brew 'pandoc'         # Converting formats
+    cask 'etcher'         # For restoring Raspberry Pi images
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
