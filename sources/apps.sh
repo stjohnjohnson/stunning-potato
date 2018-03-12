@@ -54,6 +54,7 @@ brew bundle --file=- <<EOF
     cask 'insomnia'       # RESTful calls
     brew 'pandoc'         # Converting formats
     cask 'etcher'         # For restoring Raspberry Pi images
+    brew 'jsonnet'        # Making JSON easier
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
@@ -83,6 +84,9 @@ brew bundle --file=- <<EOF
     cask 'steam'          # So I can play games
     cask 'battle-net'     # Lots of games
     brew 'nethack'        # For when you're feeling nostalgic
+
+    # Toolbox
+    cask 'cscreen'        # To set the right refresh rate
 
     # Fonts
     cask 'font-droid-sans-mono-for-powerline'
